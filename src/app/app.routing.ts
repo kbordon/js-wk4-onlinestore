@@ -1,3 +1,4 @@
+import { AdminComponent }   from './admin/admin.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: 'albums/:id',
     component: AlbumDetailComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 
