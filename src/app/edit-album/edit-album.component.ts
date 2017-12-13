@@ -9,6 +9,7 @@ import { AlbumService } from '../album.service';
 })
 export class EditAlbumComponent implements OnInit {
   @Input() selectedAlbum;
+  selectedArtist:string = '';
 
   constructor(private albumService: AlbumService) { }
 
@@ -18,6 +19,12 @@ export class EditAlbumComponent implements OnInit {
   beginUpdatingAlbum(albumToUpdate){
     // this.albumService.testMethod(albumToUpdate);
     this.albumService.updateAlbum(albumToUpdate);
+  }
+
+  beginDeletingAlbum(albumToDelete){
+    if(confirm("Are you sure you want to delete this item from the inventory?")){
+      this.albumService.deleteAlbum(albumToDelete);
+    }
   }
 
 }

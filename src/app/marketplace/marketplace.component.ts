@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Album } from '../album.model';
 import { Router } from '@angular/router';
 import { AlbumService } from '../album.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-marketplace',
@@ -14,6 +15,7 @@ import { AlbumService } from '../album.service';
 export class MarketplaceComponent implements OnInit {
   albums: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  selectedArtist:string = '';
 
   constructor(private router: Router, private albumService: AlbumService){}
 

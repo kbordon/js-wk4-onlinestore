@@ -1,6 +1,10 @@
 <h2>Marketplace</h2>
+<p>Filter by the artist's name by entering it below.</p>
+<input placeholder="Enya" [(ngModel)]="selectedArtist">
+<br>
+<br>
 
-<div *ngFor="let album of albums | async" class="panel panel-default">
+<div *ngFor="let album of albums | async | albumTitle:selectedArtist" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailPage(album)"><em>{{album.title}}</em> by {{album.artist}}</h3>
     <div *ngIf="currentRoute === '/admin'">
